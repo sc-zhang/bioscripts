@@ -23,8 +23,13 @@ def stat_gff3(in_gff3):
 				anchored_db[chrn][allele] += 1
 			else:
 				unanchored_cnt += 1
+	
+	for chrn in anchored_db:
+		break
+
 	print("Chromosome\t%s"%('\t'.join(sorted(anchored_db[chrn]))))
 	anchored_cnt = 0
+	
 	for chrn in sorted(anchored_db):
 		print("%s"%chrn, end='')
 		for allele in sorted(anchored_db[chrn]):
