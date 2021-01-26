@@ -37,8 +37,13 @@ while(<IN>){
 	}
 close IN;
 
+my $size=(-s $genome);
+my $gmap = "gmap";
+if($size>2**32){
+	$gmap = "gmapl";
+}
 system("gmap_build -D . -d DB ".$genome);
-system("gmap -D . -d DB -t ".$threads." -f 2 -n ".$dup_n." ".$ref_name.".cds"." > ".$qry_name.".gff3");
+system($gmap." -D . -d DB -t ".$threads." -f 2 -n ".$dup_n." ".$ref_name.".cds"." > ".$qry_name.".gff3");
 
 open(CDS, "> ".$qry_name.".cds") or die"";
 open(BED, "> ".$qry_name.".bed") or die"";
