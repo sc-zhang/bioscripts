@@ -16,7 +16,7 @@ def stat_agp(in_agp):
 			chrn = data[0]
 			total_tig += 1
 			ep = int(data[2])
-			if chrn[:3] != 'tig':
+			if data[0] != data[5] and chrn[:3] != 'tig' and chrn[:3] != 'utg' and chrn[:3] != 'ctg':
 				allele = chrn[-1]
 				chrn = chrn[:-1]
 				if chrn not in asm_db:

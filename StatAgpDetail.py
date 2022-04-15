@@ -18,7 +18,7 @@ def stat_agp(in_agp, out_csv):
 				gap_len += 100
 			else:
 				chrn = data[0]
-				if chrn[:3] != 'tig':
+				if chrn[:3] != 'tig' and chrn[:3] != 'utg' and chrn[:3] != 'ctg' and data[0] != data[5]:
 					allele = chrn[-1]
 					chrn = chrn[:-1]
 					if chrn not in asm_db:
