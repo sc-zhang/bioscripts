@@ -22,6 +22,8 @@ def split_fa(in_fa, in_agp, out_dir):
     chr_ctgs = {}
     with open(in_agp, 'r') as fin:
         for line in fin:
+            if line.strip() == "" or line[0] == '#':
+                continue
             data = line.strip().split()
             if data[4] != 'W':
                 continue
