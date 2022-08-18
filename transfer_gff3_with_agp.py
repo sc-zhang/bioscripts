@@ -57,10 +57,6 @@ def trans_anno(in_gff3, in_old_agp, in_new_agp, out_gff3):
 			if data[4] == 'U':
 				continue
 			tig = data[5]
-			if 'r' in tig:
-				tig, idx = tig.split('r')
-				if idx != '1':
-					continue
 			chrn = data[0]
 			sp = int(data[1])
 			ep = int(data[2])
