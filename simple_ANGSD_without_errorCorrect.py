@@ -87,7 +87,7 @@ def run_abbababa(opts):
 	
 	print("Done\n")
 	
-	cmd = "Rscript /public1/home/zsc/software/angsd/DSTAT angsdFile=\"bam.Angsd\" out=\"result\" sizeFile=sizeFile.size nameFile=popNames.name"
+	cmd = "Rscript DSTAT angsdFile=\"bam.Angsd\" out=\"result\" sizeFile=sizeFile.size nameFile=popNames.name"
 	print("Running command: "+cmd)
 	os.system(cmd)
 	print("Done\nSuccess")
