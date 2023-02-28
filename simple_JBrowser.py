@@ -1,10 +1,15 @@
 #!/usr/bin/python
-import os, sys
-import ConfigParser
+import os
+import sys
 
 
 def get_config(f_conf, section, key):
-	config = ConfigParser.ConfigParser()
+	if sys.version[0] == '2':
+		import ConfigParser
+		config = ConfigParser.ConfigParser()
+	else:
+		import configparser
+		config = configparser.ConfigParser()
 	config.read(f_conf)
 	return config.get(section, key)
 
