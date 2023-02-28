@@ -111,7 +111,7 @@ def blast2heatmap(ref_fasta, blast_file, ws, out_name, t_i, t_m):
 	print("Filter blast result")
 	filter_blast(blast_file, "01_"+out_name+'_filter.bed', t_i, t_m)
 	print("Generate windows")
-	os.system("sliding_window.pl -i "+ref_fasta+" -o "+"02_"+out_name+"_win.bed -w "+ws+" -s "+ws)
+	os.system("bedtools makewindows -g "+ref_fasta+" -w "+ws+" > 02_"+out_name+"_win.bed")
 	print("Coverage")
 	os.system("bedtools coverage -a "+"02_"+out_name+"_win.bed -b "+"01_"+out_name+"_filter.bed > "+"03_"+out_name+"_cover.txt")
 	print("Reshape data")
