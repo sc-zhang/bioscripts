@@ -117,8 +117,8 @@ def SimGenomeCtg(inFasta, outFasta, n50, minLen, maxLen):
 
 	print("\nWriting contigs")
 	with open(outFasta, 'w') as fOut:
+		base = 100
 		for chrn in sorted(fastaDB):
-			base = 100
 			for region in ctgRegionsDB[chrn]:
 				s = region[0]
 				e = region[1]
