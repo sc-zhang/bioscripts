@@ -216,7 +216,7 @@ Notice:
 ```
 - simple_JBrowser.py is a script for generating file for JBrowser
 ```shell
-# J.conf is a default config file for simple_JBrowser.py
+# etc/SimpleJBrowser.conf is a template config file for simple_JBrowser.py
 simple_JBrowser.py -f <fasta_file> [--gff <gff_file> --bed <bed_file> --bam <bam_file> --bw <bigwig_file> --conf <config_file>]
 ```
 - SimSID.py is a script for simulating SNP, Insertions and Deletions.
