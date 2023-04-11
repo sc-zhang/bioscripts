@@ -2,6 +2,16 @@
 This repository contains several scripts for bioinformatics.
 
 
+## Installation
+```shell
+git clone https://github.com/sc-zhang/bioscripts.git
+cd bin
+chmod +x *
+# Optional, add following line to your ~/.bash_profile
+export PATH=/path/to/bioscripts/bin:$PATH
+```
+
+
 ## Usage
 - approximate_cnv.py is a script for approximating CNV (Copy Number Variation) with read depth.
 ```shell
