@@ -11,8 +11,8 @@ import time
 
 def get_opts():
 	group = argparse.ArgumentParser()
-	group.add_argument("-b", "--base", help="Input vcf file as base", required=True)
-	group.add_argument("-v", "--validation", help="Input vcf file as validation", required=True)
+	group.add_argument("-b", "--base", help="Input vcf file as base, .gz supported", required=True)
+	group.add_argument("-v", "--validation", help="Input vcf file as validation, .gz supported", required=True)
 	group.add_argument("-r", "--repeat", help="Repeat regions file, gff format", default="")
 	group.add_argument("-o", "--output", help="Output vcf file based on base vcf file, compressed with gzip", required=True)
 	group.add_argument("-m", "--missing_rate", type=float, help="Missing rate threshold, percentage, default: 40", default=40)
