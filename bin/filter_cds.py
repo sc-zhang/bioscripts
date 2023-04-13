@@ -16,8 +16,8 @@ def filter_cds(in_cds, out_cds):
 	for id in cds_db:
 		cds_db[id] = ''.join(cds_db[id])
 	print("Filtering cds")
-	start_codon = {"ATG": 1}
-	stop_codon = {"TAG": 1, "TAA": 1, "TGA": 1}
+	start_codon = set(["ATG"])
+	stop_codon = set(["TAG", "TAA", "TGA"])
 
 	with open(out_cds, 'w') as fout:
 		for id in sorted(cds_db):
