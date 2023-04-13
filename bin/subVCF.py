@@ -35,7 +35,7 @@ def subVCF(in_vcf, in_list, out_vcf, missing_rate):
 		out_str = ''
 		for i in col_db:
 			out_str += "\t"+data[i]
-			if data[i] == './.':
+			if data[i] == './.' or data[i] == '.|.':
 				cnt_mis += 1
 		if len(col_db) > 0 and cnt_mis*1.0/len(col_db) > missing_rate:
 			continue
