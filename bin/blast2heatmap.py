@@ -123,6 +123,7 @@ def blast2heatmap(ref_fasta, blast_file, ws, out_name, t_i, t_m):
 if __name__ == "__main__":
 	if len(sys.argv) < 7:
 		print("Usage: python "+sys.argv[0]+" <ref_fasta> <blast_file> <window_size> <out_name> <threshold_identify> <threshold_match>")
+		print("Notice: bedtools and R are required")
 	else:
 		proc, ref_fasta, blast_file, ws, out_name, t_i, t_m = sys.argv
 		blast2heatmap(ref_fasta, blast_file, ws, out_name, float(t_i), float(t_m))
