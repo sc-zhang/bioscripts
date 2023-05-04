@@ -286,3 +286,13 @@ transfer_gff3_with_agp.py <in_gff3> <in_old_agp> <in_new_agp> <out_gff3>
 ```shell
 vcf2geno.py -i <input_vcf> -o <output_vcf> -q/--quality <min_qual> -f/--filter <filter_type> <min_value>
 ```
+- eval_synteny.py is a script for evaluating the assembly consistency between query genome and reference genome by mapping cds of reference genome to query genome and reference genome with gmap and extract bed files with jcvi.
+```shell
+usage: eval_synteny.py [-h] -r REF -q QRY -p PAIR
+
+options:
+  -h, --help            show this help message and exit
+  -r REF, --ref REF     ref.bed
+  -q QRY, --qry QRY     qry.bed
+  -p PAIR, --pair PAIR  pair list from chromosomes: qry_id, ref_id
+```
