@@ -12,7 +12,7 @@ def get_opts():
     
     return group.parse_args()
 
-# Longest crease sub sequence
+# Longest increase sub sequence
 def LIS(arr):
     min_num = [-1]
     for n in arr:
