@@ -296,3 +296,9 @@ options:
   -q QRY, --qry QRY     qry.bed
   -p PAIR, --pair PAIR  pair list from chromosomes: qry_id, ref_id
 ```
+
+- get_seq_with_bed.py is a script for extracting sequences from fasta file with bed file, the bed file can contain 4 or 5 fields: [seq_id, start_pos, end_pos, out_id] or [seq_id, start_pos, end_pos, direct, out_id]
+```shell
+Usage: python get_seq_with_bed.py <in_fa> <in_bed> <out_fa>
+```
+
