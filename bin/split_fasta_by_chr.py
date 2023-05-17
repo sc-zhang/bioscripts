@@ -23,7 +23,7 @@ def split_fasta_by_chr(fasta_file, out_folder):
 		if seq_id[:4].lower() != '>chr':
 			continue
 		f_out = open(out_folder+"/"+seq_id[1:]+".fasta", 'w')
-		f_out.write(seq_id+"\n"+seq_db[seq_id])
+		f_out.write(seq_id+"\n"+seq_db[seq_id]+"\n")
 		f_out.close()				
 
 
