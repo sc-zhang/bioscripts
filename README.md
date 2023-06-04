@@ -302,7 +302,7 @@ options:
 Usage: python get_seq_with_bed.py <in_fa> <in_bed> <out_fa>
 ```
 
-- convert_anchorwave.py is as script for convert anchorwave maf file to a table file.
+- convert_anchorwave.py is as script for convert anchorwave maf file to a table file, which contains 7 columns: "Ref id, start position, end position, query id, start position, end position, variant type"
 ```shell
 usage: convert_anchorwave.py [-h] -i INPUT -o OUTPUT
 
