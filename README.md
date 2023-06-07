@@ -286,7 +286,7 @@ transfer_gff3_with_agp.py <in_gff3> <in_old_agp> <in_new_agp> <out_gff3>
 ```shell
 vcf2geno.py -i <input_vcf> -o <output_vcf> -q/--quality <min_qual> -f/--filter <filter_type> <min_value>
 ```
-- eval_synteny.py is a script for evaluating the assembly consistency between query genome and reference genome by mapping cds of reference genome to query genome and reference genome with gmap and extract bed files with jcvi.
+- eval_synteny.py is a script for evaluating the assembly consistency between query genome and reference genome by mapping cds of reference genome to query genome and reference genome with gmap and extract bed files with jcvi, be sure that the query bed file only contain the chromosomes and/or contigs which you want evalute.
 ```shell
 usage: eval_synteny.py [-h] -r REF -q QRY -p PAIR
 
@@ -294,7 +294,6 @@ options:
   -h, --help            show this help message and exit
   -r REF, --ref REF     ref.bed
   -q QRY, --qry QRY     qry.bed
-  -p PAIR, --pair PAIR  pair list from chromosomes: qry_id, ref_id
 ```
 
 - get_seq_with_bed.py is a script for extracting sequences from fasta file with bed file, the bed file can contain 4 or 5 fields: [seq_id, start_pos, end_pos, out_id] or [seq_id, start_pos, end_pos, direct, out_id]
