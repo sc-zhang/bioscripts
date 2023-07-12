@@ -3,26 +3,25 @@ import sys
 
 
 def calc_gap_cnt(in_fa):
-	fa_db = {}
+	total_cnt = 0
 	with open(in_fa, 'r') as fin:
+		id = ''
+		gap_cnt = 0
 		for line in fin:
 			if line[0] == '>':
+				if id != '':
+					print("%s\t%d"%(id, gap_cnt))
+					total_cnt += gap_cnt
 				id = line.strip()[1:]
-				fa_db[id] = []
+				gap_cnt = 0
+				last_base =''
 			else:
-				fa_db[id].append(line.strip().lower())
-
-	total_cnt = 0	
-	for id in sorted(fa_db):
-		last_base = ''
-		cnt = 0
-		seq = ''.join(fa_db[id])
-		for i in range(0, len(seq)):
-			if seq[i] == 'n' and last_base != 'n':
-				cnt += 1
-			last_base = seq[i]
-		print("%s\t%d"%(id, cnt))
-		total_cnt += cnt
+				for i in range(len(line.strip())):
+					if line[i].lower() == 'n' and last_base != 'n':
+						gap_cnt += 1
+					last_base = line[i].lower()
+		print("%s\t%d"%(id, gap_cnt))
+		total_cnt += gap_cnt
 	print("Total\t%d"%total_cnt)
 
 
