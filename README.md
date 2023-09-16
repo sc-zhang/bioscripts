@@ -301,7 +301,7 @@ options:
 Usage: python get_seq_with_bed.py <in_fa> <in_bed> <out_fa>
 ```
 
-- convert_anchorwave.py is as script for convert anchorwave maf file to a table file, which contains 7 columns: "Ref id, start position, end position, query id, start position, end position, variant type"
+- convert_anchorwave.py is a script for convert anchorwave maf file to a table file, which contains 7 columns: "Ref id, start position, end position, query id, start position, end position, variant type"
 ```shell
 usage: convert_anchorwave.py [-h] -i INPUT -o OUTPUT
 
@@ -313,3 +313,8 @@ options:
                         Out put file
 ```
 
+- extract_fasta_with_bed.py is a script for extract seq with bed file contain 5 colunms: "ID, start, end, direction, id", positions should be 1-based
+```shell
+Usage: python bin/extract_fasta_with_bed.py <in_fa> <in_bed> <out_fa>
+Notice: bed should be 5 columns: "ID, start, end, direction, id", positions should be 1-based
+```
