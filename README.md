@@ -375,12 +375,6 @@ subVCF.py <in_vcf> <in_list> <out_vcf> [<missing_rate>]
 transfer_gff3_with_agp.py <in_gff3> <in_old_agp> <in_new_agp> <out_gff3>
 ```
 
-- vcf2geno.py is a script for converting vcf file to geno file for ABBABABAwindows.py.
-
-```shell
-vcf2geno.py -i <input_vcf> -o <output_vcf> -q/--quality <min_qual> -f/--filter <filter_type> <min_value>
-```
-
 - eval_synteny.py is a script for evaluating the assembly consistency between query genome and reference genome by
   mapping cds of reference genome to query genome and reference genome with gmap and extract bed files with jcvi, be
   sure that the query bed file only contain the chromosomes and/or contigs which you want evalute.
@@ -427,4 +421,17 @@ Notice: bed should be 5 columns: "ID, start, end, direction, id", positions shou
 
 ```shell
 Usage: python ./bin/convert_chr_to_ctg_with_agp.py <in_fa> <in_agp> <out_fa>
+```
+
+- bam_cov.py is a script for calculating genome coverage ratio from bam file.
+```shell
+usage: bam_cov.py [-h] -b BAM -o OUTPUT [-t THREADS]
+
+options:
+  -h, --help            show this help message and exit
+  -b BAM, --bam BAM     Input bam file, must be indexed
+  -o OUTPUT, --output OUTPUT
+                        Output statistic
+  -t THREADS, --threads THREADS
+                        Threads, default=10
 ```
