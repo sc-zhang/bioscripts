@@ -435,3 +435,10 @@ options:
   -t THREADS, --threads THREADS
                         Threads, default=10
 ```
+- sort_gff3.py is a script for sorting genes with chromosomes and positions, and generating new IDs.
+```shell
+Usage: python ./sort_gff3.py <chr_prefix> <in_gff> <out_gff>
+Notice: sort and rename id with in_gff
+Example: python ./sort_gff3.py CB5 in.gff out.gff
+```
+
