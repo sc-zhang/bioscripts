@@ -424,6 +424,7 @@ Usage: python ./bin/convert_chr_to_ctg_with_agp.py <in_fa> <in_agp> <out_fa>
 ```
 
 - bam_cov.py is a script for calculating genome coverage ratio from bam file.
+
 ```shell
 usage: bam_cov.py [-h] -b BAM -o OUTPUT [-t THREADS]
 
@@ -435,10 +436,12 @@ options:
   -t THREADS, --threads THREADS
                         Threads, default=10
 ```
+
 - sort_gff3.py is a script for sorting genes with chromosomes and positions, and generating new IDs.
+
 ```shell
-Usage: python ./sort_gff3.py <chr_prefix> <in_gff> <out_gff>
-Notice: sort and rename id with in_gff
-Example: python ./sort_gff3.py CB5 in.gff out.gff
+Usage: python ./bin/sort_gff3.py <chr_prefix> <in_gff3> <out_gff3>
+Notice: sort and rename id with in_gff by coordinate, the chromosome ID should be like: Chr01 for mono assembly, Chr01A for phased assembly.
+Example: python ./bin/sort_gff3.py CB5 in.gff3 out.gff3
 ```
 
