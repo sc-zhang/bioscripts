@@ -445,3 +445,67 @@ Notice: sort and rename id with in_gff by coordinate, the chromosome ID should b
 Example: python ./bin/sort_gff3.py CB5 in.gff3 out.gff3
 ```
 
+- easyGoKegg.R is a simple script for running GO and KEGG with custom emapper annotation
+
+>### Dependencies
+>**Software**
+> - R
+>
+>**R modules**
+> - optparse
+> - KEGGREST
+> - clusterProfiler
+> - dplyr
+> - stringr
+> - AnnotationForge
+> - jsonlite
+> - purrr
+> - RCurl
+> - ggplot2
+>
+>### Data preparation
+>- Prepare eggnog result  
+>Drop lines start with "##", remove "#" at the beginning of line "#query ...", make sure the first line of annotation file is like below:
+>```text
+>query	seed_ortholog	evalue	score	eggNOG_OGs	max_annot_lvl	COG_category	Description	Preferred_name	GOs	EC	KEGG_ko	KEGG_Pathway	KEGG_Module	KEGG_Reaction	KEGG_rclass	BRITE	KEGG_TC	CAZy	BiGG_Reaction	PFAMs
+>```
+>
+>- Prepare target gene list  
+>A text file each line contain one gene id, the id of genes should match which in annotation file.
+>
+>### Usage
+>- Run command like below
+>```bash
+>Rscript easyGoKegg.R -i gene.txt -a emapper.annotations -d database
+>```
+>
+>- Detail of parameters
+>```bash
+>Usage: This Script is used for running GO and KEGG
+>
+>Options:
+>	-i INPUT, --input=INPUT
+>		Input gene list file
+>	-a ANNO, --anno=ANNO
+>		Functional annotation file
+>	-d DB, --db=DB
+>		Database path
+>	--genus=GENUS
+>		Genus name for creating GO database, default="Custom genus"
+>	--species=SPECIES
+>		Species name for creating GO database, default="CUSTOM"
+>	--tax_id=TAX_ID
+>		Tax id for creating GO database, default="0000"
+>	--update
+>		Update databases
+>	--plant
+>		enrich with plant pathway only
+>	-h, --help
+>		Show this help message and exit
+>```
+>> **Notice** there should no space in species
+>
+>## Result
+>1. text file of GO and KEGG results
+>2. bubble plot of GO and KEGG results
+>3. bar plot of GO and KEGG results
