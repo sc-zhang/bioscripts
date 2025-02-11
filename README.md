@@ -482,26 +482,33 @@ Example: python ./bin/sort_gff3.py CB5 in.gff3 out.gff3
 >- Detail of parameters
 >```bash
 >Usage: This Script is used for running GO and KEGG
->
 >Options:
->	-i INPUT, --input=INPUT
->		Input gene list file
->	-a ANNO, --anno=ANNO
->		Functional annotation file
->	-d DB, --db=DB
->		Database path
->	--genus=GENUS
->		Genus name for creating GO database, default="Custom genus"
->	--species=SPECIES
->		Species name for creating GO database, default="CUSTOM"
->	--tax_id=TAX_ID
->		Tax id for creating GO database, default="0000"
->	--update
->		Update databases
->	--plant
->		enrich with plant pathway only
->	-h, --help
->		Show this help message and exit
+>        -i INPUT, --input=INPUT
+>                Input gene list file
+>        -a ANNO, --anno=ANNO
+>                Functional annotation file
+>        -d DB, --db=DB
+>                Database path
+>        --genus=GENUS
+>                Genus name for creating GO database, default="Custom genus"
+>        --pvalue=PVALUE
+>                P value cutoff for GO and KEGG, default=0.05
+>        --qvalue=QVALUE
+>                Q value cutoff for GO and KEGG, default=0.05
+>        --padjust=PADJUST
+>                P adjust method for GO and KEGG, default="BH"
+>        --ontology=ONTOLOGY
+>                Ontology for GO, default="ALL"
+>        --species=SPECIES
+>                Species name for creating GO database, default="CUSTOM"
+>        --tax_id=TAX_ID
+>                Tax id for creating GO database, default="0000"
+>        --update
+>                Update databases
+>        --plant
+>                enrich with plant pathway only
+>        -h, --help
+>                Show this help message and exit
 >```
 >> **Notice** there should no space in species
 >
