@@ -42,6 +42,8 @@ def extract_vcf(in_vcf, in_bed, out_vcf):
 				else:
 					data = line.strip().split()
 					chrn = data[0]
+                    if chrn not in bed_db:
+                        continue
 					pos = int(data[1])
 					if bin_search(bed_db[chrn], pos):
 						f_out.write(line)
