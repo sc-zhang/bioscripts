@@ -20,6 +20,7 @@ def bin_search(bed_list, pos):
 
 
 def extract_vcf(in_vcf, in_bed, out_vcf):
+	print("Loading BED file")
 	bed_db = {}
 	with open(in_bed, 'r') as f_in:
 		for line in f_in:
@@ -32,6 +33,9 @@ def extract_vcf(in_vcf, in_bed, out_vcf):
 			if chrn not in bed_db:
 				bed_db[chrn] = []
 			bed_db[chrn].append([sr, er])
+	
+	print("Extracting VCF")
+	last_chrn = ""
 	with open(in_vcf, 'r') as f_in:
 		with open(out_vcf, 'w') as f_out:
 			for line in f_in:
@@ -42,6 +46,9 @@ def extract_vcf(in_vcf, in_bed, out_vcf):
 				else:
 					data = line.strip().split()
 					chrn = data[0]
+					if chrn != last_chrn:
+						print("\tExtracting %s"%chrn)
+						last_chrn = chrn
 					if chrn not in bed_db:
 						continue
 					pos = int(data[1])
