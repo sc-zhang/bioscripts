@@ -54,6 +54,8 @@ def extract_vcf(in_vcf, in_bed, out_vcf):
 					pos = int(data[1])
 					if bin_search(bed_db[chrn], pos):
 						f_out.write(line)
+	
+	print("Finished")
 
 
 if __name__ == "__main__":
