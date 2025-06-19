@@ -467,6 +467,11 @@ Example: python ./bin/sort_gff3.py CB5 in.gff3 out.gff3
 > - RCurl
 > - ggplot2
 >
+>**Install R packages**
+> ```bash
+> install.packages("BiocManager")
+> BiocManager::install(c("optparse","dplyr","stringr", "jsonlite","purrr","ggplot2", "RCurl", "KEGGREST", "clusterProfiler", "AnnotationForge"))
+> ```
 >### Data preparation
 >- Prepare eggnog result  
 >Drop lines start with "##", remove "#" at the beginning of line "#query ...", make sure the first line of annotation file is like below:
