@@ -525,3 +525,17 @@ Example: python ./bin/sort_gff3.py CB5 in.gff3 out.gff3
 >1. text file of GO and KEGG results
 >2. bubble plot of GO and KEGG results
 >3. bar plot of GO and KEGG results
+
+55. check_cds.py is a script for checking CDS valid or not.
+
+```shell
+usage: check_cds.py [-h] -i INPUT [--detail] [-o OUTPUT]
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        Input CDS file
+  --detail              If set, output detail information
+  -o OUTPUT, --output OUTPUT
+                        Output summary file, if not set, output to stdout
+```
