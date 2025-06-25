@@ -38,7 +38,7 @@ def check_cds(in_cds, is_detail, out_summary):
                 gid = line.strip().split()[0][1:]
                 cds_db[gid] = []
             else:
-                cds_db[gid].append(line.strip())
+                cds_db[gid].append(line.strip().upper())
 
     for gid in cds_db:
         cds_db[gid] = "".join(cds_db[gid])
