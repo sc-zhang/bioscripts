@@ -158,7 +158,7 @@ run_go_kegg <- function(db_path, gene2pathway, pathway2name, gene_file,
 
   cat("Saving GO result\n")
   GO_df <- as.data.frame(GO)
-  write.table(GO_df, file = "GO.results.txt", quote = FALSE)
+  write.table(GO_df, file = "GO.results.tsv", sep = "\t", quote = FALSE)
 
   cat("Saving GO barplot\n")
   pdf(file = "GO_barplot.pdf", width = 15, height = 20)
@@ -182,7 +182,7 @@ run_go_kegg <- function(db_path, gene2pathway, pathway2name, gene_file,
 
   cat("Saving KEGG result\n")
   KEGG_df <- as.data.frame(KEGG)
-  write.table(KEGG_df, file = "KEGG.results.txt", quote = FALSE)
+  write.table(KEGG_df, file = "KEGG.results.tsv", sep = "\t", quote = FALSE)
 
   cat("Saving KEGG barplot\n")
   pdf(file = "KEGG_barplot.pdf", width = 15, height = 20)
